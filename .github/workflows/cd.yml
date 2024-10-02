@@ -31,10 +31,10 @@ jobs:
 
       - name: Dump Identity
         run: |
-            mkdir -p ~/.config/dfx/identity/main
-            echo $DFX_IDENTITY | base64 -d > ~/.config/dfx/identity/main/identity.pem
-        env:
-          DFX_IDENTITY: ${{ secrets.DFX_IDENTITY }}
+          mkdir -p ~/.config/dfx/identity/main
+          echo "${{ secrets.DFX_IDENTITY }}" | base64 -d > ~/.config/dfx/identity/main/identity.pem.encrypted
+          sed -i 's/\\r\\n/\r\n/g' ~/.config/dfx/identity/main/identity.pem.encrypted
+        shell: bash
 
 
       - name: Install Dependencies
