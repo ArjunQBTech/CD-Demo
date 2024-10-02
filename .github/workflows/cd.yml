@@ -36,6 +36,9 @@ jobs:
           sed -i 's/\\r\\n/\r\n/g' ~/.config/dfx/identity/default/identity.pem
         shell: bash
 
+      - name: Check Dump
+        run: cat ~/.config/dfx/identity/default/identity.pem
+
 
       - name: Install Dependencies
         run: npm install
