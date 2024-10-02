@@ -44,4 +44,4 @@ jobs:
         run: npm install
 
       - name: Deploy to Mainnet
-        run: dfx deploy --network=ic --no-wallet
+        run: dfx deploy --network=ic --no-wallet dock_backend
