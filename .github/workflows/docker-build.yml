@@ -2,7 +2,7 @@ name: Build and Push Docker Image
 
 on:
   workflow_run:
-    workflows: ["Continuous Deployment"] # Name of your cd.yml workflow
+    workflows: ["CD"] # Name of your cd.yml workflow
     types:
       - completed
 
